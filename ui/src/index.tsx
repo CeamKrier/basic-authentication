@@ -1,19 +1,21 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
+import { Provider } from "store/provider";
 
 const App = React.lazy(() => import("./App"));
-import Spinner from "components/Spinner";
 
-import "styles/global.scss";
+import "styles/global.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
 root.render(
     <React.StrictMode>
         <BrowserRouter>
-            <React.Suspense fallback={<Spinner />}>
-                <App />
-            </React.Suspense>
+            <Provider>
+                <React.Suspense fallback={<div>Loading</div>}>
+                    <App />
+                </React.Suspense>
+            </Provider>
         </BrowserRouter>
     </React.StrictMode>
 );

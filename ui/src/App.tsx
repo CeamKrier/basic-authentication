@@ -1,3 +1,4 @@
+import { routes } from "pages/lib/constants";
 import * as React from "react";
 import { Routes, Route } from "react-router-dom";
 
@@ -8,8 +9,8 @@ class App extends React.Component {
     render() {
         return (
             <Routes>
-                <Route path='/' element={<List />} />
-                <Route path='account' element={<Account />} />
+                <Route path={routes.list} element={<List />} />
+                <Route path={routes.account} element={<Account />} />
             </Routes>
         );
     }
