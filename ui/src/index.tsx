@@ -3,7 +3,8 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "store/provider";
 
-const App = React.lazy(() => import("./App"));
+import "localization";
+import App from "App";
 
 import "styles/global.css";
 
@@ -12,9 +13,7 @@ root.render(
     <React.StrictMode>
         <BrowserRouter>
             <Provider>
-                <React.Suspense fallback={<div>Loading</div>}>
-                    <App />
-                </React.Suspense>
+                <App />
             </Provider>
         </BrowserRouter>
     </React.StrictMode>

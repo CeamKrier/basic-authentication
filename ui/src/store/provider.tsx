@@ -2,27 +2,29 @@ import React, { ReactElement, useReducer } from "react";
 import { Context } from "./context";
 
 import { actions } from "./lib/constants";
-
-interface IGlobalState {
-    user: Object | undefined;
-}
-
-interface IAction {
-    type: string;
-    payload: Object;
-}
+import { IAction, ICart, IGlobalState, IUser } from "./lib/store.interface";
 
 const initialState: IGlobalState = {
-    user: undefined
+    user: undefined,
+    cart: []
 };
 
 const reducer = (state: IGlobalState, action: IAction) => {
     switch (action.type) {
         case actions.LOGIN:
-            state.user = action.payload;
+            state.user = action.payload as IUser;
             return Object.assign({}, state);
         case actions.LOGOUT:
             state.user = undefined;
+            return Object.assign({}, state);
+        case actions.ADD_CART:
+            state.cart.push(action.payload as ICart);
+            return Object.assign({}, state);
+        case actions.REMOVE_CART:
+            const index = state.cart.indexOf(action.payload as ICart);
+            if (index > -1) {
+                state.cart.splice(index, 1);
+            }
             return Object.assign({}, state);
         default:
             return state;

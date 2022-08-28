@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 import { routes } from "pages/lib/constants";
 import { Link, useLocation } from "react-router-dom";
@@ -12,6 +13,7 @@ import { ReactComponent as AccountIcon } from "assets/icons/account.svg";
 
 const Navbar = ({}: INavbar) => {
     const location = useLocation();
+    const { t } = useTranslation();
 
     return (
         <StyledNavbar>
@@ -19,13 +21,13 @@ const Navbar = ({}: INavbar) => {
                 <StyledLink className={location?.pathname === routes.list ? "active-link" : ""} to={routes.list}>
                     <StyledLinkContainer>
                         <ListIcon />
-                        List
+                        {t("keyNavList")}
                     </StyledLinkContainer>
                 </StyledLink>
                 <StyledLink className={location?.pathname === routes.account ? "active-link" : ""} to={routes.account}>
                     <StyledLinkContainer>
                         <AccountIcon />
-                        Account
+                        {t("keyNavAccount")}
                     </StyledLinkContainer>
                 </StyledLink>
             </NavbarContainer>

@@ -1,17 +1,10 @@
 import { createContext } from "react";
-
-interface IGlobalState {
-    user: Object | undefined;
-}
-
-interface IContext {
-    state: IGlobalState;
-    dispatch: React.Dispatch<any>;
-}
+import { IContext } from "./lib/store.interface";
 
 export const Context = createContext<IContext>({
     state: {
-        user: undefined
+        user: undefined,
+        cart: []
     },
     dispatch: () => {}
 });
