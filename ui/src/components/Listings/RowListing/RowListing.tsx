@@ -1,13 +1,13 @@
 import React from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
-import { styled } from "styles/theme";
+import Button from "components/Button";
 import { ReactComponent as RatingIcon } from "assets/icons/rating.svg";
 import { ReactComponent as MarkerIcon } from "assets/icons/marker.svg";
 import { ReactComponent as CartIcon } from "assets/icons/cart.svg";
 
 import { IRowListing } from "./RowListing.interface";
-import Button from "components/Button";
+import { styled } from "styles/theme";
 
 const RowListing = ({ contents, onPick }: IRowListing) => {
     const handleAddCart = (id: string) => () => {

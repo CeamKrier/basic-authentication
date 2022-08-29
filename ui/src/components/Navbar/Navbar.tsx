@@ -1,15 +1,14 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-
-import { routes } from "pages/lib/constants";
 import { Link, useLocation } from "react-router-dom";
-import { styled } from "styles/theme";
-import { StyledDefaultContainer } from "styles/theme/common";
 
 import { INavbar } from "./Navbar.interface";
+import { routes } from "pages/lib/constants";
 
 import { ReactComponent as ListIcon } from "assets/icons/list.svg";
 import { ReactComponent as AccountIcon } from "assets/icons/account.svg";
+import { StyledDefaultContainer } from "styles/theme/common";
+import { styled } from "styles/theme";
 
 const Navbar = ({}: INavbar) => {
     const location = useLocation();

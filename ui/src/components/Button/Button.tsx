@@ -1,7 +1,7 @@
 import React from "react";
-import { styled } from "styles/theme";
 
 import { IButton } from "./Button.interface";
+import { styled } from "styles/theme";
 
 const Button = ({ type, children, onClick, variant, disabled }: IButton) => {
     return (

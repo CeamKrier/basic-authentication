@@ -6,7 +6,7 @@ import cors from "cors";
 import ListingsRoute from "./routes/listings";
 
 const server = express();
-const port = 1969;
+const port = 9009;
 
 server
     .disable("x-powered-by")

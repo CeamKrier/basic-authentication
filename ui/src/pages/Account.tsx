@@ -2,15 +2,15 @@ import React, { ChangeEvent, MouseEvent, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 
 import Layout from "components/Layout";
-import { styled } from "styles/theme";
-import { StyledDefaultContainer } from "styles/theme/common";
+import Button from "components/Button";
+import SelectInput from "components/SelectInput";
 import Signup from "forms/Signup";
 
+import { login, logout } from "store/actions";
 import useProvider from "hooks/useProvider";
 import { LocalStorageKeys } from "utils/constants";
-import { login, logout } from "store/actions";
-import SelectInput from "components/SelectInput";
-import Button from "components/Button";
+import { StyledDefaultContainer } from "styles/theme/common";
+import { styled } from "styles/theme";
 
 const Account = () => {
     const { state, dispatch } = useProvider();

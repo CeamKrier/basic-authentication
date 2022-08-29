@@ -3,13 +3,14 @@ import { Formik, Field, Form, FormikHelpers, FormikProps } from "formik";
 import * as Yup from "yup";
 import { useTranslation } from "react-i18next";
 
-import { ISignup, IValues } from "./Signup.interface";
-import { styled } from "styles/theme";
-import { LocalStorageKeys } from "utils/constants";
-import useProvider from "hooks/useProvider";
-import { login } from "store/actions";
 import SelectInput from "components/SelectInput";
 import Button from "components/Button";
+
+import { ISignup, IValues } from "./Signup.interface";
+import { login } from "store/actions";
+import useProvider from "hooks/useProvider";
+import { LocalStorageKeys } from "utils/constants";
+import { styled } from "styles/theme";
 
 const SignupSchema = Yup.object().shape({
     password: Yup.string().required("Required"),
